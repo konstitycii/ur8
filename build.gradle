@@ -1,0 +1,26 @@
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation("com.codeborne:selenide:7.0.4") {
+        exclude group: 'org.yaml', module: 'snakeyaml'
+    }
+    testImplementation('com.github.javafaker:javafaker:1.0.2') {
+        exclude group: 'org.yaml', module: 'snakeyaml'
+    }
+    testImplementation(
+            "org.junit.jupiter:junit-jupiter:5.10.1",
+            'org.slf4j:slf4j-simple:2.0.9',
+            'org.yaml:snakeyaml:2.0'
+    )
+}
+
+
+test {
+    useJUnitPlatform()
+}
