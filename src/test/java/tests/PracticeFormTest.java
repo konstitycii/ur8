@@ -4,11 +4,11 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import pages.PracticeFormPage;
-import utils.TestDataGenerator;
+import utils.TestDataRandomUtil;
 
 public class PracticeFormTest {
 
-    private final TestDataGenerator testData = new TestDataGenerator();
+    private final TestDataRandomUtil testData = new TestDataRandomUtil();
 
     private final String firstName = testData.getFirstName(),
             lastName = testData.getLastName(),
