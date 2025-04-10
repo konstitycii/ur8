@@ -38,7 +38,6 @@ public class PracticeFormPage {
         return this;
     }
 
-    // Методы для заполнения полей
     public PracticeFormPage setFirstName(String value) {
         firstNameInput.setValue(value);
         return this;
@@ -49,7 +48,6 @@ public class PracticeFormPage {
         return this;
     }
 
-    // Добавляем недостающий метод для email
     public PracticeFormPage setEmail(String value) {
         emailInput.setValue(value);
         return this;
@@ -107,7 +105,6 @@ public class PracticeFormPage {
         return this;
     }
 
-    // Методы для проверки результатов
     public void verifyModalTitle(String expectedTitle) {
         resultsTable.verifyModalTitle(expectedTitle);
     }

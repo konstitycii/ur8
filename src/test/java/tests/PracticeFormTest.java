@@ -19,8 +19,8 @@ public class PracticeFormTest {
             monthOfBirth = "May",
             yearOfBirth = "1990",
             picture = "i.webp",
-            hobby=testData.getRandomHobby(),
-            subject=testData.getRandomSubject(),
+            hobby = testData.getRandomHobby(),
+            subject = testData.getRandomSubject(),
             address = testData.getAddress(),
             state = testData.getState(),
             city = testData.getCity(state);

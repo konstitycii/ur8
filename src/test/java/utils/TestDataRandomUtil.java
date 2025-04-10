@@ -62,7 +62,6 @@ public class TestDataRandomUtil {
         String month = faker.options().option("January", "February", "March", "April", "May", "June",
                 "July", "August", "September", "October", "November", "December");
         int year = faker.number().numberBetween(1900, 2023); // Год от 1900 до 2023
-        return String.format("%02d-%s-%d", day, month, year);
+        return String.format("%d %s, %d", day, month, year); // Формат: "15 May, 1990"
     }
-
 }
