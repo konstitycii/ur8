@@ -10,20 +10,18 @@ public class PracticeFormTest {
 
     private final TestDataRandomUtil testData = new TestDataRandomUtil();
 
-    private final String firstName = testData.getFirstName(),
-            lastName = testData.getLastName(),
-            email = testData.getEmail(),
-            gender = testData.getGender(),
-            mobile = testData.getMobileNumber(),
-            dayOfBirth = "15",
-            monthOfBirth = "May",
-            yearOfBirth = "1990",
-            picture = "i.webp",
-            hobby = testData.getRandomHobby(),
-            subject = testData.getRandomSubject(),
-            address = testData.getAddress(),
-            state = testData.getState(),
-            city = testData.getCity(state);
+    String firstName = testData.getFirstName();
+    String lastName = testData.getLastName();
+    String email = testData.getEmail();
+    String gender = testData.getGender();
+    String mobile = testData.getMobileNumber();
+    String[] dateOfBirthParts = testData.getDateOfBirthParts();
+    String subject = testData.getRandomSubject();
+    String picture="i.webp";
+    String hobby = testData.getRandomHobby();
+    String address = testData.getAddress();
+    String state = testData.getState();
+    String city = testData.getCity(state);
 
     @BeforeEach
     public void setUp() {
@@ -42,7 +40,7 @@ public class PracticeFormTest {
                 .setEmail(email)
                 .selectGender(gender)
                 .setMobile(mobile)
-                .setDateOfBirth(dayOfBirth, monthOfBirth, yearOfBirth)
+                .setDateOfBirth(dateOfBirthParts[0], dateOfBirthParts[1], dateOfBirthParts[2])
                 .setSubjects(subject)
                 .selectHobbies(hobby)
                 .uploadPicture(picture)
@@ -56,7 +54,7 @@ public class PracticeFormTest {
         formPage.verifySubmittedData("Student Email", email);
         formPage.verifySubmittedData("Gender", gender);
         formPage.verifySubmittedData("Mobile", mobile);
-        formPage.verifySubmittedData("Date of Birth", dayOfBirth + " " + monthOfBirth + "," + yearOfBirth);
+        formPage.verifySubmittedData("Date of Birth", dateOfBirthParts[0] + " " + dateOfBirthParts[1] + "," + dateOfBirthParts[2]);
         formPage.verifySubmittedData("Subjects", subject);
         formPage.verifySubmittedData("Hobbies", hobby);
         formPage.verifySubmittedData("Picture", picture);
